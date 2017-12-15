@@ -10,158 +10,81 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    private let brick = #imageLiteral(resourceName: "lego-brick-tile-bw")
-    
-    private lazy var sourceImage: UIImage = {
-        var img = UIImage()
-        measure("Resizing source image") { img = resize(#imageLiteral(resourceName: "source5"), toFit: view.bounds.width) }
-        return img
-    }()
-    
-    private var brickImageViews = [IndexPath: UIImageView]()
-    private var positions = [IndexPath: CGPoint]()
-    
-    
+    private let brickSourceImage = #imageLiteral(resourceName: "lego-brick-tile-bw")
+    private let sourceImage = #imageLiteral(resourceName: "source5")
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        measure("\n") {
-            legofy(image: sourceImage, brickSize: 30.0, directory: NSTemporaryDirectory())
+        measure("All operations") {
+            let image = resize(sourceImage, toFit: view.bounds.width)
+            legofy(image: image, brickSize: 30.0)
+        }
+    }
+}
+
+private extension ViewController {
+
+    func legofy(image: UIImage, brickSize: CGFloat) {
+
+        let size = CGSize(width: brickSize, height: brickSize)
+        calculateTilePositionsAndColors(image: image, tileSize: size).forEach { (position, color) in
+            self.addBrickImage(brickSourceImage, position: position, color: color, size: size)
         }
     }
     
-    func legofy(image: UIImage, brickSize: CGFloat, directory: String) {
-        
-        measure("Cleaning temporary directory") {
-            self.cleanup()
-        }
-        
-        let tileSize = CGSize(width: brickSize,
-                              height: brickSize)
-        
-        measure("Slicing source image") {
-            self.slice(image: image,
-                       sliceSize: tileSize,
-                       directory: directory,
-                       completion: { positions in
-                        self.positions = positions
-            })
-        }
-        
-        measure("Placing bricks") {
-            self.positions.forEach { position in
-                self.addBrickImage(brick, indexPath: position.key, size: tileSize)
-            }
-        }
-        
-        var colors = [IndexPath: UIColor]()
-        measure("Picking dominant colors") {
-            colors = self.pickDominantColors(forImagesIn: directory)
-        }
-        
-        measure("Rendering color bricks") {
-            self.brickImageViews.forEach { (indexPath, imageView) in
-                if let dominantColor = colors[indexPath]{
-                    imageView.image = imageView.image?.filled(with: dominantColor)
-                }
-            }
-        }
-    }
-    
-    func pickDominantColors(forImagesIn directory: String) -> [IndexPath: UIColor] {
-        var dominantColors = [IndexPath: UIColor]()
-        do {
-            let fileManager = FileManager.default
-            let itemPaths = try fileManager.contentsOfDirectory(atPath: directory)
-            for path in itemPaths.sorted() {
-                if let image = UIImage(contentsOfFile: "\(directory)\(path)") {
-                    let color = image.averageColor()
-                    if  let row = Int(path.split(separator: ".")[1]),
-                        let col = Int(path.split(separator: ".")[0]) {
-                        let indexPath = IndexPath(row: row, section: col)
-                        dominantColors[indexPath] = color
-                    }
-                }
-            }
-        } catch let error {
-            print(error)
-        }
-        return dominantColors
-    }
-    
-    func addBrickImage(_ image: UIImage, indexPath: IndexPath, size: CGSize) {
-        guard let point = positions[indexPath] else {
-            return
-        }
-        let image = resize(image, toFit: size.width)
+    func addBrickImage(_ brickImage: UIImage, position: CGPoint, color: UIColor, size: CGSize) {
+        let image = resize(brickImage, toFit: size.width).cgImage?.filled(with: color)
         let imageView = UIImageView(image: image)
-        imageView.frame = CGRect(origin: CGPoint(x: point.x, y: point.y), size: size)
-        brickImageViews[indexPath] = imageView
-        
+        imageView.frame = CGRect(origin: CGPoint(x: position.x, y: position.y), size: size)
         view.addSubview(imageView)
     }
     
-    func slice(image: UIImage, sliceSize: CGSize, directory: String, completion: ([IndexPath: CGPoint]) -> Void) {
+    func calculateTilePositionsAndColors(image: UIImage, tileSize: CGSize) -> [CGPoint: UIColor] {
         
-        let columns: CGFloat = image.size.width / sliceSize.width
-        let rows:    CGFloat = image.size.height / sliceSize.height
+        var result = [CGPoint: UIColor]()
+        let grid = calculateColumnsAndRows(for: image, withTileSize: tileSize)
+        
+        let remainerW: CGFloat = image.size.width  - (CGFloat(grid.columns) * tileSize.width)
+        let remainerH: CGFloat = image.size.height - (CGFloat(grid.rows)    * tileSize.height)
+        
+        for row in 0..<grid.rows {
+            
+            for column in 0..<grid.columns {
+                
+                var cropAreaSize: CGSize = tileSize
+                
+                if column + 1 == grid.columns && remainerW > 0 {
+                    cropAreaSize.width = remainerW
+                }
+                
+                if row + 1 == grid.rows && remainerH > 0 {
+                    cropAreaSize.height = remainerH
+                }
+
+                let position = CGPoint(x: CGFloat(column) * tileSize.width, y: CGFloat(row) * tileSize.height)
+                let cropArea = CGRect(x: position.x, y: position.y, width: cropAreaSize.width, height: cropAreaSize.height)
+                
+                if let tileImage: CGImage = image.cgImage?.cropping(to: cropArea) {
+                    result[position] = tileImage.averageColor()
+                }
+            }
+        }
+        
+        return result
+    }
+    
+    func calculateColumnsAndRows(for image: UIImage, withTileSize tileSize: CGSize) -> (rows: Int, columns: Int) {
+        
+        let columns: CGFloat = image.size.width / tileSize.width
+        let rows:    CGFloat = image.size.height / tileSize.height
         
         var completeColumns: Int = Int(floorf(Float(columns)))
         var completeRows:    Int = Int(floorf(Float(rows)))
         
-        let widthRemainer:  CGFloat = image.size.width  - (CGFloat(completeColumns) * sliceSize.width)
-        let heightRemainer: CGFloat = image.size.height - (CGFloat(completeRows)    * sliceSize.height)
-        
         if columns > CGFloat(completeColumns) { completeColumns += 1 }
         if rows    > CGFloat(completeRows)    { completeRows += 1 }
         
-        var positions = [IndexPath: CGPoint]()
-        for row in 0..<completeRows {
-            
-            for column in 0..<completeColumns {
-                
-                var tempSliceSize: CGSize = sliceSize
-                
-                if column + 1 == completeColumns && widthRemainer > 0 {
-                    tempSliceSize.width = widthRemainer
-                }
-                
-                if row + 1 == completeRows && heightRemainer > 0 {
-                    tempSliceSize.height = heightRemainer
-                }
-                
-                let indexPath = IndexPath(row: row, section: column)
-                let position  = CGPoint(x: CGFloat(column) * sliceSize.width,
-                                        y: CGFloat(row) * sliceSize.height)
-                
-                positions[indexPath] = position
-                
-                let cropArea = CGRect(x: position.x,
-                                      y: position.y,
-                                      width: tempSliceSize.width,
-                                      height: tempSliceSize.height)
-                
-                if let tileImage: CGImage = image.cgImage?.cropping(to: cropArea) {
-                    
-                    let slicePath = "\(directory)/\(column).\(row).png"
-                    let imageSliceSaveURL = URL(fileURLWithPath: slicePath, isDirectory: false)
-                    
-                    do {
-                        let slice = UIImage(cgImage: tileImage)
-                        try UIImagePNGRepresentation(slice)?.write(to: imageSliceSaveURL, options: .atomic)
-                        
-                    } catch let error {
-                        print(error)
-                    }
-                }
-            }
-        }
-        
-        completion(positions)
-    }
-    
-    func cleanup() {
-        FileManager.cleanTemporaryDirectory()
+        return (rows: completeRows, columns: completeColumns)
     }
 }
