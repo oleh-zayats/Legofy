@@ -16,7 +16,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         legofyService = LegofyService(sourceImage: #imageLiteral(resourceName: "source5"), outputSize: view.bounds.size, brickSize: 15.0)
         legofyService?.delegate = self
-        legofyService?.isPercentValueProgressEnabled = true
+        legofyService?.isPercentProgressEnabled = true
     }
     
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
@@ -31,12 +31,12 @@ class ViewController: UIViewController {
     }
     
     @IBAction func legofyButtonDidTouchUpInside(_ sender: UIButton) {
-        cleanView()
+        cleanup()
         legofyService?.generateImage()
     }
     
     @IBAction func cleanButtonDidTouchUpInside(_ sender: UIButton) {
-        cleanView()
+        cleanup()
     }
 }
 
@@ -45,13 +45,23 @@ extension ViewController: LegofyServiceDelegate {
         print("\(progress)%")
     }
     
-    func legofyServiceDidRenderImage(image: UIImage) {
+    func legofyServiceDidFinishGeneratingImage(image: UIImage) {
+        addImageSubview(image)
+    }
+    
+    func legofyServiceDidFinishGeneratingTileImages(positionsAndTiles: [CGPoint: UIImage]) {
+        addTilesSubviews(positionsAndTiles)
+    }
+}
+
+private extension ViewController {
+    func addImageSubview(_ image: UIImage) {
         let imageView = UIImageView(image: image)
         view.addSubview(imageView)
         view.sendSubview(toBack: imageView)
     }
     
-    func legofyServiceDidGenerateTiles(positionsAndTiles: [CGPoint: UIImage]) {
+    func addTilesSubviews(_ positionsAndTiles: [CGPoint: UIImage]) {
         positionsAndTiles.forEach { (position, image) in
             let tileImageView = UIImageView(frame: CGRect(origin: position, size: image.size))
             tileImageView.image = image
@@ -59,10 +69,8 @@ extension ViewController: LegofyServiceDelegate {
             view.sendSubview(toBack: tileImageView)
         }
     }
-}
-
-private extension ViewController {
-    func cleanView() {
+    
+    func cleanup() {
         view.subviews.forEach { subview in
             if (subview is UIButton) == false && (subview is UISlider) == false {
                 subview.removeFromSuperview()

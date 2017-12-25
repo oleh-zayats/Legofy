@@ -8,31 +8,30 @@
 
 import UIKit
 
-private enum MeasureOperation {
-    static let imageGeneration = "UIImage generation"
-    static let tilesGeneration = "Tiles generation"
-}
-
 protocol LegofyServiceDelegate: class {
     func legofyServiceDidUpdateProgress(progress: Float)
-    func legofyServiceDidRenderImage(image: UIImage)
-    func legofyServiceDidGenerateTiles(positionsAndTiles: [CGPoint: UIImage])
+    func legofyServiceDidFinishGeneratingImage(image: UIImage)
+    func legofyServiceDidFinishGeneratingTileImages(positionsAndTiles: [CGPoint: UIImage])
 }
 
 protocol LegofyProtocol {
     var delegate: LegofyServiceDelegate? { get set }
-    var isPercentValueProgressEnabled: Bool { get set }
+    var isPercentProgressEnabled: Bool { get set }
     func generateImage()
-    func generateBrickTiles()
+    func generateBrickTileImages()
     func setOutputSize(_ size: CGSize)
     func setBrickSize(_ size: CGFloat)
 }
 
 final class LegofyService: LegofyProtocol {
+    private enum OperationName {
+        static let imageGeneration = "Image generation"
+        static let tilesGeneration = "Brick tiles generation"
+    }
     
     weak var delegate: LegofyServiceDelegate?
     
-    var isPercentValueProgressEnabled: Bool = false
+    var isPercentProgressEnabled: Bool = false
     
     /* Should be service provided image */
     private let _sourceBrickImage = #imageLiteral(resourceName: "lego-brick-tile-bw")
@@ -54,12 +53,12 @@ final class LegofyService: LegofyProtocol {
     private var _progress: Float = 0.0 {
         didSet {
             var progress = _progress
-            if isPercentValueProgressEnabled { progress = _progress.roundTo(2) * 100 }
+            if isPercentProgressEnabled { progress = _progress.roundTo(2) * 100 }
             delegate?.legofyServiceDidUpdateProgress(progress: progress)
         }
     }
     
-    init(sourceImage: UIImage, outputSize: CGSize, brickSize: CGFloat) {
+    init(sourceImage: UIImage, outputSize: CGSize, brickSize: CGFloat = 15.0) {
         self._sourceImage = sourceImage
         self._outputSize = outputSize
         self._brickSize = brickSize
@@ -71,11 +70,11 @@ final class LegofyService: LegofyProtocol {
      * 3. Assembling images and positions in dictionary
      * 4. Calling delegate method
      */
-    func generateBrickTiles() {
+    func generateBrickTileImages() {
         /* Progress tracking start */
         _progress = 0.001
         
-        measure(MeasureOperation.tilesGeneration) {
+        measure(OperationName.tilesGeneration) {
         
             let resizedBrickImage = _fitBrickImage
             var positionsAndTiles: [CGPoint: UIImage] = [:]
@@ -83,7 +82,7 @@ final class LegofyService: LegofyProtocol {
                 positionsAndTiles[position] = resizedBrickImage.cgImage?.filled(with: color)
             }
 
-            delegate?.legofyServiceDidGenerateTiles(positionsAndTiles: positionsAndTiles)
+            delegate?.legofyServiceDidFinishGeneratingTileImages(positionsAndTiles: positionsAndTiles)
         }
     }
     
@@ -98,13 +97,13 @@ final class LegofyService: LegofyProtocol {
         /* Progress tracking start */
         _progress = 0.001
         
-        measure(MeasureOperation.imageGeneration) {
+        measure(OperationName.imageGeneration) {
             
             let resizedBrickImage = _fitBrickImage
             let positionsAndColors = calculateTilePositionsAndColors(image: _fitSourceImage, tileSize: resizedBrickImage.size)
             let image = renderImage(with: positionsAndColors)
 
-            delegate?.legofyServiceDidRenderImage(image: image)
+            delegate?.legofyServiceDidFinishGeneratingImage(image: image)
         }
     }
     
@@ -123,9 +122,9 @@ private extension LegofyService {
         /* Progress tracking */
         let progressFraction: Float = 0.5 / Float(positionsAndColors.count - 1)
         
-        let renderer = UIGraphicsImageRenderer(size: self._outputSize, format: .default())
+        let renderer = UIGraphicsImageRenderer(size: _outputSize, format: .default())
         let image: UIImage = renderer.image { (context) in
-            let fillRect = CGRect(origin: .zero, size: self._outputSize)
+            let fillRect = CGRect(origin: .zero, size: _outputSize)
             UIColor.white.setFill()
             context.fill(fillRect)
             
