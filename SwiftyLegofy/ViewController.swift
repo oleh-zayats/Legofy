@@ -14,6 +14,9 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        legofyService = LegofyService(sourceImage: #imageLiteral(resourceName: "source5"), outputSize: view.bounds.size, brickSize: 15.0)
+        legofyService?.delegate = self
+        legofyService?.isPercentValueProgressEnabled = true
     }
     
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
@@ -22,16 +25,13 @@ class ViewController: UIViewController {
     }
     
     @IBAction func sliderDidChangeValue(_ sender: UISlider) {
-        let size = CGFloat(sender.value)
+        let size = floor(CGFloat(sender.value))
         print("Brick Size: \(size)")
         legofyService?.setBrickSize(size)
     }
     
     @IBAction func legofyButtonDidTouchUpInside(_ sender: UIButton) {
         cleanView()
-        legofyService = LegofyService(sourceImage: #imageLiteral(resourceName: "source5"), outputSize: view.bounds.size, brickSize: 10.0)
-        legofyService?.delegate = self
-        legofyService?.isPercentValueProgressEnabled = true
         legofyService?.generateImage()
     }
     
@@ -42,7 +42,7 @@ class ViewController: UIViewController {
 
 extension ViewController: LegofyServiceDelegate {
     func legofyServiceDidUpdateProgress(progress: Float) {
-        print(progress)
+        print("\(progress)%")
     }
     
     func legofyServiceDidRenderImage(image: UIImage) {
