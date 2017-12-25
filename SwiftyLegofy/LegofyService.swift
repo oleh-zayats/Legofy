@@ -124,9 +124,6 @@ private extension LegofyService {
         
         let renderer = UIGraphicsImageRenderer(size: _outputSize, format: .default())
         let image: UIImage = renderer.image { (context) in
-            let fillRect = CGRect(origin: .zero, size: _outputSize)
-            UIColor.white.setFill()
-            context.fill(fillRect)
             
             let resizedBrickImage = _fitBrickImage.cgImage
             
