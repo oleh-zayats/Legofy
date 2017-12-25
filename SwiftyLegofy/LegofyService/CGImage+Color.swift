@@ -1,5 +1,5 @@
 //
-//  CGImage+Extensions.swift
+//  CGImage+Color.swift
 //  SwiftyLegofy
 //
 //  Created by Oleh Zayats on 12/13/17.
@@ -9,9 +9,11 @@
 import UIKit
 
 extension CGImage {
-    
+    /**
+     Analizes CGImage, finds the dominant color
+     - returns: UIColor (optional)
+     */
     func averageColor() -> UIColor? {
-        
         guard let data: CFData = dataProvider?.data else {
             return nil
         }
@@ -19,8 +21,7 @@ extension CGImage {
         guard let rawPixelData = CFDataGetBytePtr(data) else {
             return nil
         }
-        
-        
+    
         let stride = bitsPerPixel / 4
         
         var r = 0
@@ -43,12 +44,17 @@ extension CGImage {
         
         let f: CGFloat = 1.0 / (255.0 * CGFloat(width) * CGFloat(height))
         
-        return UIColor(red:   f * CGFloat(r),
-                       green: f * CGFloat(g),
-                       blue:  f * CGFloat(b),
-                       alpha: 1.0)
+        return UIColor(red: f * CGFloat(r),
+                     green: f * CGFloat(g),
+                      blue: f * CGFloat(b),
+                     alpha: 1.0)
     }
     
+    /**
+     Fills CGImage with given color and returns a new UIImage
+     - parameter color: image color
+     - returns: colored UIImage
+     */
     func filled(with color: UIColor) -> UIImage? {
         defer {
             UIGraphicsEndImageContext()
