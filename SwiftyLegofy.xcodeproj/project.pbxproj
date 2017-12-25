@@ -15,6 +15,7 @@
 		838DA88D1FE1A783008CB5B3 /* CGImage+Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838DA88C1FE1A783008CB5B3 /* CGImage+Color.swift */; };
 		83B3E6AA1FE2E03B0053DA96 /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83B3E6A91FE2E03B0053DA96 /* Utility.swift */; };
 		83B3E6B01FE4003A0053DA96 /* CGPoint+Hashable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83B3E6AF1FE4003A0053DA96 /* CGPoint+Hashable.swift */; };
+		83DB416C1FF18BB300D446AD /* Float+Rounding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83DB416B1FF18BB300D446AD /* Float+Rounding.swift */; };
 		83FD42661FF108B100125C8D /* LegofyService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83FD42651FF108B100125C8D /* LegofyService.swift */; };
 		83FD426C1FF1630800125C8D /* UIImage+Resizing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83FD426B1FF1630800125C8D /* UIImage+Resizing.swift */; };
 /* End PBXBuildFile section */
@@ -30,6 +31,7 @@
 		838DA88C1FE1A783008CB5B3 /* CGImage+Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGImage+Color.swift"; sourceTree = "<group>"; };
 		83B3E6A91FE2E03B0053DA96 /* Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
 		83B3E6AF1FE4003A0053DA96 /* CGPoint+Hashable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGPoint+Hashable.swift"; sourceTree = "<group>"; };
+		83DB416B1FF18BB300D446AD /* Float+Rounding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Float+Rounding.swift"; sourceTree = "<group>"; };
 		83FD42651FF108B100125C8D /* LegofyService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LegofyService.swift; sourceTree = "<group>"; };
 		83FD426B1FF1630800125C8D /* UIImage+Resizing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Resizing.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -65,24 +67,17 @@
 			isa = PBXGroup;
 			children = (
 				838DA87C1FE19D00008CB5B3 /* ViewController.swift */,
-				83FD42691FF1193700125C8D /* LegofyService */,
+				83FD42651FF108B100125C8D /* LegofyService.swift */,
+				83FD426B1FF1630800125C8D /* UIImage+Resizing.swift */,
+				838DA88C1FE1A783008CB5B3 /* CGImage+Color.swift */,
+				83B3E6AF1FE4003A0053DA96 /* CGPoint+Hashable.swift */,
+				83DB416B1FF18BB300D446AD /* Float+Rounding.swift */,
+				83B3E6A91FE2E03B0053DA96 /* Utility.swift */,
 				83FD426A1FF11A5B00125C8D /* Application */,
 				838DA8811FE19D00008CB5B3 /* Assets.xcassets */,
 				838DA8861FE19D00008CB5B3 /* Info.plist */,
 			);
 			path = SwiftyLegofy;
-			sourceTree = "<group>";
-		};
-		83FD42691FF1193700125C8D /* LegofyService */ = {
-			isa = PBXGroup;
-			children = (
-				83FD42651FF108B100125C8D /* LegofyService.swift */,
-				83FD426B1FF1630800125C8D /* UIImage+Resizing.swift */,
-				838DA88C1FE1A783008CB5B3 /* CGImage+Color.swift */,
-				83B3E6AF1FE4003A0053DA96 /* CGPoint+Hashable.swift */,
-				83B3E6A91FE2E03B0053DA96 /* Utility.swift */,
-			);
-			path = LegofyService;
 			sourceTree = "<group>";
 		};
 		83FD426A1FF11A5B00125C8D /* Application */ = {
@@ -173,6 +168,7 @@
 				83FD42661FF108B100125C8D /* LegofyService.swift in Sources */,
 				83FD426C1FF1630800125C8D /* UIImage+Resizing.swift in Sources */,
 				838DA87D1FE19D00008CB5B3 /* ViewController.swift in Sources */,
+				83DB416C1FF18BB300D446AD /* Float+Rounding.swift in Sources */,
 				838DA87B1FE19D00008CB5B3 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

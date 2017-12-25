@@ -14,7 +14,7 @@ extension UIImage {
      - parameter width: width the image should fit
      - returns: resized UIImage (optional)
      */
-    func resize(toFit width: CGFloat) -> UIImage? {
+    func resize(toFit width: CGFloat) -> UIImage {
         defer {
             UIGraphicsEndImageContext()
         }
@@ -24,6 +24,6 @@ extension UIImage {
         UIGraphicsBeginImageContext(ctxSize)
         let rect = CGRect(x: 0, y: 0, width: width, height: newHeight)
         draw(in: rect)
-        return UIGraphicsGetImageFromCurrentImageContext()
+        return UIGraphicsGetImageFromCurrentImageContext()!
     }
 }

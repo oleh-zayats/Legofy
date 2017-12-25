@@ -9,7 +9,7 @@
 import UIKit
 
 /**
- Prints out time spent to perform a chunk of code. For testing.
+ Prints out time spent to perform a chunk of code. For testing purposes.
  - parameter operationName: given function/chunk of code name
  - parameter operation: closure in which code is passed to measure the performance
  */
