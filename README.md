@@ -1,6 +1,13 @@
 # Legofy
 Turn any image into lego block grid.
 
+Work In Progress...
+# TODO:
+1. Make a nice project structure.
+2. Add Example Folder with CocoaPod usage.
+3. Write some simple Unit Tests.
+4. Describe component in Readme.
+
 ![alt text](https://github.com/oleh-zayats/Legofy/blob/master/Resources/00-original.jpg)
 ![alt text](https://github.com/oleh-zayats/Legofy/blob/master/Resources/01-render.png)
 ![alt text](https://github.com/oleh-zayats/Legofy/blob/master/Resources/02-render.png)
