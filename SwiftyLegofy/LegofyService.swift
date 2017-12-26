@@ -76,11 +76,10 @@ final class LegofyService: LegofyServiceProtocol {
     }
     
     /*
-     * 1. Generating the future legofied image (blank)
-     * 2. Calculating dominant colors and positions for tiles to be rendered in an image
-     * 3. Initializing graphics renderer for creating Core Graphics-backed image
-     * 4. Rendering image with calculated components
-     * 5. Calling delegate method
+     * 1. Calculating dominant colors and positions for tiles to be rendered
+     * 2. Initializing graphics renderer for creating Core Graphics-backed image
+     * 3. Rendering image with calculated components
+     * 4. Calling delegate method
      */
     func generateImage() {
         /* Progress tracking start */

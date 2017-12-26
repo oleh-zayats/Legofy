@@ -69,8 +69,8 @@
 			isa = PBXGroup;
 			children = (
 				838DA87C1FE19D00008CB5B3 /* ViewController.swift */,
-				83FD42651FF108B100125C8D /* LegofyService.swift */,
 				83DB41911FF22E0000D446AD /* LegofyServiceProtocol.swift */,
+				83FD42651FF108B100125C8D /* LegofyService.swift */,
 				83FD426B1FF1630800125C8D /* UIImage+Resizing.swift */,
 				838DA88C1FE1A783008CB5B3 /* CGImage+Color.swift */,
 				83B3E6AF1FE4003A0053DA96 /* CGPoint+Hashable.swift */,
