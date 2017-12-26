@@ -25,12 +25,10 @@ Pod::Spec.new do |s|
   #   * Write the description between the DESC delimiters below.
   #   * Finally, don't worry about the indent, CocoaPods strips it!
   s.description  = <<-DESC
-  "Turn any image into lego block grid."
+  "Feed an image to LegofyService and it will be transformed into a lego block grid."
                    DESC
 
   s.homepage     = "https://github.com/oleh-zayats/Legofy"
-  s.screenshots  = "https://github.com/oleh-zayats/Legofy/blob/master/Resources/01-render.png", "https://github.com/oleh-zayats/Legofy/blob/master/Resources/02-render.png"
-
 
   # ―――  Spec License  ――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   #
