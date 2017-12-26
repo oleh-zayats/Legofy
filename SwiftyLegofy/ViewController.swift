@@ -10,7 +10,7 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    var legofyService: LegofyProtocol?
+    var legofyService: LegofyServiceProtocol?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,9 +25,9 @@ class ViewController: UIViewController {
     }
     
     @IBAction func sliderDidChangeValue(_ sender: UISlider) {
-        let size = floor(CGFloat(sender.value))
-        print("Brick Size: \(size)")
-        legofyService?.setBrickSize(size)
+        let brickSize = floor(CGFloat(sender.value))
+        print("Brick Size: \(brickSize)")
+        legofyService?.setBrickSize(brickSize)
     }
     
     @IBAction func legofyButtonDidTouchUpInside(_ sender: UIButton) {
@@ -41,15 +41,15 @@ class ViewController: UIViewController {
 }
 
 extension ViewController: LegofyServiceDelegate {
-    func legofyServiceDidUpdateProgress(progress: Float) {
+    func legofyServiceDidUpdateProgress(_ progress: Float) {
         print("\(progress)%")
     }
     
-    func legofyServiceDidFinishGeneratingImage(image: UIImage) {
+    func legofyServiceDidFinishGeneratingImage(_ image: UIImage) {
         addImageSubview(image)
     }
     
-    func legofyServiceDidFinishGeneratingTileImages(positionsAndTiles: [CGPoint: UIImage]) {
+    func legofyServiceDidFinishGeneratingTileImages(_ positionsAndTiles: [CGPoint: UIImage]) {
         addTilesSubviews(positionsAndTiles)
     }
 }
@@ -63,7 +63,8 @@ private extension ViewController {
     
     func addTilesSubviews(_ positionsAndTiles: [CGPoint: UIImage]) {
         positionsAndTiles.forEach { (position, image) in
-            let tileImageView = UIImageView(frame: CGRect(origin: position, size: image.size))
+            let frame = CGRect(origin: position, size: image.size)
+            let tileImageView = UIImageView(frame: frame)
             tileImageView.image = image
             view.addSubview(tileImageView)
             view.sendSubview(toBack: tileImageView)
@@ -72,7 +73,8 @@ private extension ViewController {
     
     func cleanup() {
         view.subviews.forEach { subview in
-            if (subview is UIButton) == false && (subview is UISlider) == false {
+            if (subview is UIButton) == false
+            && (subview is UISlider) == false {
                 subview.removeFromSuperview()
             }
         }
