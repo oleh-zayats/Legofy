@@ -52,6 +52,7 @@
 		838DA86E1FE19D00008CB5B3 = {
 			isa = PBXGroup;
 			children = (
+				83DB41931FF234B600D446AD /* Classes */,
 				838DA8791FE19D00008CB5B3 /* SwiftyLegofy */,
 				838DA8781FE19D00008CB5B3 /* Products */,
 			);
@@ -68,7 +69,19 @@
 		838DA8791FE19D00008CB5B3 /* SwiftyLegofy */ = {
 			isa = PBXGroup;
 			children = (
+				838DA87A1FE19D00008CB5B3 /* AppDelegate.swift */,
 				838DA87C1FE19D00008CB5B3 /* ViewController.swift */,
+				838DA87E1FE19D00008CB5B3 /* Main.storyboard */,
+				838DA8831FE19D00008CB5B3 /* LaunchScreen.storyboard */,
+				838DA8811FE19D00008CB5B3 /* Assets.xcassets */,
+				838DA8861FE19D00008CB5B3 /* Info.plist */,
+			);
+			path = SwiftyLegofy;
+			sourceTree = "<group>";
+		};
+		83DB41931FF234B600D446AD /* Classes */ = {
+			isa = PBXGroup;
+			children = (
 				83DB41911FF22E0000D446AD /* LegofyServiceProtocol.swift */,
 				83FD42651FF108B100125C8D /* LegofyService.swift */,
 				83FD426B1FF1630800125C8D /* UIImage+Resizing.swift */,
@@ -76,21 +89,8 @@
 				83B3E6AF1FE4003A0053DA96 /* CGPoint+Hashable.swift */,
 				83DB416B1FF18BB300D446AD /* Float+Rounding.swift */,
 				83B3E6A91FE2E03B0053DA96 /* Utility.swift */,
-				83FD426A1FF11A5B00125C8D /* Application */,
-				838DA8811FE19D00008CB5B3 /* Assets.xcassets */,
-				838DA8861FE19D00008CB5B3 /* Info.plist */,
 			);
-			path = SwiftyLegofy;
-			sourceTree = "<group>";
-		};
-		83FD426A1FF11A5B00125C8D /* Application */ = {
-			isa = PBXGroup;
-			children = (
-				838DA87A1FE19D00008CB5B3 /* AppDelegate.swift */,
-				838DA87E1FE19D00008CB5B3 /* Main.storyboard */,
-				838DA8831FE19D00008CB5B3 /* LaunchScreen.storyboard */,
-			);
-			path = Application;
+			path = Classes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
