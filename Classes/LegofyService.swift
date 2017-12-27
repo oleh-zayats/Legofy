@@ -8,26 +8,45 @@
 
 import UIKit
 
-protocol LegofyServiceDelegate: class {
+public enum BrickType {
+    case clean, legoV1, legoV2, legoV3, custom(UIImage)
+}
+
+public protocol LegofyServiceDelegate: class {
     func legofyServiceDidUpdateProgress(_ progress: Float)
     func legofyServiceDidFinishGeneratingImage(_ image: UIImage)
     func legofyServiceDidFinishGeneratingTileImages(_ positionsAndTiles: [CGPoint: UIImage])
 }
 
-final class LegofyService: LegofyServiceProtocol {
+public final class LegofyService: LegofyServiceProtocol {
     private enum OperationName {
         static let imageGeneration = "Image generation"
         static let tilesGeneration = "Brick tiles generation"
     }
     
-    weak var delegate: LegofyServiceDelegate?
+    public weak var delegate: LegofyServiceDelegate?
     
-    var isPercentProgressEnabled: Bool = false
+    public var isPercentProgressEnabled: Bool = false
     
-    private let _sourceBrickImage = #imageLiteral(resourceName: "lego-brick-tile-bw")
     private let _sourceImage: UIImage
     private var _outputSize: CGSize
     private var _brickSize: CGFloat
+    private var _brickType: BrickType
+    
+    private var _sourceBrickImage: UIImage {
+        switch _brickType {
+        case .clean:
+            return #imageLiteral(resourceName: "lego-brick-tile-bw")
+        case .legoV1:
+            return #imageLiteral(resourceName: "lego-brick-tile-bw-2")
+        case .legoV2:
+            return #imageLiteral(resourceName: "lego-brick-tile-bw-4")
+        case .legoV3:
+            return #imageLiteral(resourceName: "lego-brick-tile-bw-3")
+        case .custom(let image):
+            return image
+        }
+    }
     
     private var _fitSourceImage: UIImage {
         let resizedSourceImage = _sourceImage.resize(toFit: _outputSize.width)
@@ -47,10 +66,11 @@ final class LegofyService: LegofyServiceProtocol {
         }
     }
     
-    init(sourceImage: UIImage, outputSize: CGSize, brickSize: CGFloat = 20.0) {
+    init(sourceImage: UIImage, outputSize: CGSize? = nil, brickSize: CGFloat = 20.0, brickType: BrickType = .clean) {
         self._sourceImage = sourceImage
-        self._outputSize = outputSize
+        self._outputSize = outputSize ?? sourceImage.size
         self._brickSize = brickSize
+        self._brickType = brickType
     }
     
     /*
@@ -59,18 +79,18 @@ final class LegofyService: LegofyServiceProtocol {
      * 3. Assembling images and positions in dictionary
      * 4. Calling delegate method
      */
-    func generateBrickTileImages() {
+    public func generateBrickTileImages() {
         /* Progress tracking start */
         _progress = 0.001
         
         measure(OperationName.tilesGeneration) {
-        
+            
             let resizedBrickImage = _fitBrickImage
             var positionsAndTileImagess: [CGPoint: UIImage] = [:]
             calculateTilePositionsAndColors(image: _fitSourceImage, tileSize: resizedBrickImage.size).forEach { (position, color) in
                 positionsAndTileImagess[position] = resizedBrickImage.cgImage?.filled(with: color)
             }
-
+            
             delegate?.legofyServiceDidFinishGeneratingTileImages(positionsAndTileImagess)
         }
     }
@@ -81,7 +101,7 @@ final class LegofyService: LegofyServiceProtocol {
      * 3. Rendering image with calculated components
      * 4. Calling delegate method
      */
-    func generateImage() {
+    public func generateImage() {
         /* Progress tracking start */
         _progress = 0.001
         
@@ -90,17 +110,21 @@ final class LegofyService: LegofyServiceProtocol {
             let resizedBrickImage = _fitBrickImage
             let positionsAndColors = calculateTilePositionsAndColors(image: _fitSourceImage, tileSize: resizedBrickImage.size)
             let renderedImage = renderImage(with: positionsAndColors)
-
+            
             delegate?.legofyServiceDidFinishGeneratingImage(renderedImage)
         }
     }
     
-    func setOutputSize(_ size: CGSize) {
+    public func setOutputSize(_ size: CGSize) {
         _outputSize = size
     }
     
-    func setBrickSize(_ size: CGFloat) {
+    public func setBrickSize(_ size: CGFloat) {
         _brickSize = size
+    }
+    
+    public func setBrickType(_ type: BrickType) {
+        _brickType = type
     }
 }
 
@@ -170,14 +194,14 @@ private extension LegofyService {
     
     func calculateColumnsAndRows(for image: UIImage, withTileSize tileSize: CGSize) -> (rows: Int, columns: Int) {
         
-        let columns: CGFloat = image.size.width / tileSize.width
+        let columns: CGFloat = image.size.width  / tileSize.width
         let rows:    CGFloat = image.size.height / tileSize.height
         
         var completeColumns: Int = Int(floorf(Float(columns)))
         var completeRows:    Int = Int(floorf(Float(rows)))
         
         if columns > CGFloat(completeColumns) { completeColumns += 1 }
-        if rows    > CGFloat(completeRows)    { completeRows += 1 }
+        if rows    > CGFloat(completeRows)    { completeRows    += 1 }
         
         return (rows: completeRows, columns: completeColumns)
     }

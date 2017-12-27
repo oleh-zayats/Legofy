@@ -8,75 +8,80 @@
 
 import UIKit
 
+private enum Default {
+    static let brickSize: CGFloat = 50.0
+    static let sourceImg: UIImage = #imageLiteral(resourceName: "source5")
+    static let brickType: BrickType = .clean
+}
+
 class ViewController: UIViewController {
+
+    @IBOutlet weak var sliderControl: UISlider!
+    @IBOutlet weak var outputImageView: UIImageView!
+    @IBOutlet weak var brickSizeLabel: UILabel!
     
     var legofyService: LegofyServiceProtocol?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        legofyService = LegofyService(sourceImage: #imageLiteral(resourceName: "source5"), outputSize: view.bounds.size, brickSize: 15.0)
+        initialSetup()
+        legofyService = LegofyService(sourceImage: Default.sourceImg, brickSize: Default.brickSize, brickType: Default.brickType)
         legofyService?.delegate = self
         legofyService?.isPercentProgressEnabled = true
     }
-    
-    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
-        super.viewWillTransition(to: size, with: coordinator)
-        legofyService?.setOutputSize(size)
-    }
-    
-    @IBAction func sliderDidChangeValue(_ sender: UISlider) {
-        let brickSize = floor(CGFloat(sender.value))
-        print("Brick Size: \(brickSize)")
-        legofyService?.setBrickSize(brickSize)
-    }
-    
-    @IBAction func legofyButtonDidTouchUpInside(_ sender: UIButton) {
-        cleanup()
-        legofyService?.generateImage()
-    }
-    
-    @IBAction func cleanButtonDidTouchUpInside(_ sender: UIButton) {
-        cleanup()
-    }
 }
 
+// MARK: - LegofyServiceDelegate
 extension ViewController: LegofyServiceDelegate {
     func legofyServiceDidUpdateProgress(_ progress: Float) {
         print("\(progress)%")
     }
     
     func legofyServiceDidFinishGeneratingImage(_ image: UIImage) {
-        addImageSubview(image)
+        outputImageView.image = image
     }
     
     func legofyServiceDidFinishGeneratingTileImages(_ positionsAndTiles: [CGPoint: UIImage]) {
-        addTilesSubviews(positionsAndTiles)
+        print("Generated \(positionsAndTiles.count) tiles")
     }
 }
 
+// MARK: - Actions
 private extension ViewController {
-    func addImageSubview(_ image: UIImage) {
-        let imageView = UIImageView(image: image)
-        view.addSubview(imageView)
-        view.sendSubview(toBack: imageView)
+    @IBAction func sliderDidChangeValue(_ sender: UISlider) {
+        let brickSize = floor(CGFloat(sender.value))
+        brickSizeLabel.text = "Brick Size: \(brickSize)"
+        legofyService?.setBrickSize(brickSize)
     }
     
-    func addTilesSubviews(_ positionsAndTiles: [CGPoint: UIImage]) {
-        positionsAndTiles.forEach { (position, image) in
-            let frame = CGRect(origin: position, size: image.size)
-            let tileImageView = UIImageView(frame: frame)
-            tileImageView.image = image
-            view.addSubview(tileImageView)
-            view.sendSubview(toBack: tileImageView)
+    @IBAction func segmentedControlDidChangeValue(_ sender: UISegmentedControl) {
+        let index = sender.selectedSegmentIndex
+        if index == 0 {
+            legofyService?.setBrickType(.clean)
+        } else if index == 1 {
+            legofyService?.setBrickType(.legoV1)
+        } else if index == 2 {
+            legofyService?.setBrickType(.legoV2)
+        } else if index == 3 {
+            legofyService?.setBrickType(.legoV3)
         }
     }
     
-    func cleanup() {
-        view.subviews.forEach { subview in
-            if (subview is UIButton) == false
-            && (subview is UISlider) == false {
-                subview.removeFromSuperview()
-            }
-        }
+    @IBAction func legofyButtonDidTouchUpInside(_ sender: UIButton) {
+        legofyService?.generateImage()
+    }
+    
+    @IBAction func cleanButtonDidTouchUpInside(_ sender: UIButton) {
+        outputImageView.image = Default.sourceImg
+    }
+}
+
+// MARK: - Setup
+private extension ViewController {
+    func initialSetup() {
+        outputImageView.layer.borderWidth = 3.0
+        outputImageView.layer.borderColor = UIColor.darkGray.cgColor
+        brickSizeLabel.text = "Brick Size: \(Default.brickSize)"
+        sliderControl.value = Float(Default.brickSize)
     }
 }

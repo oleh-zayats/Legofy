@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol LegofyServiceProtocol {
+public protocol LegofyServiceProtocol {
     
     var delegate: LegofyServiceDelegate? { get set }
     var isPercentProgressEnabled: Bool   { get set }
@@ -17,5 +17,5 @@ protocol LegofyServiceProtocol {
     func generateBrickTileImages()
     func setOutputSize(_ size: CGSize)
     func setBrickSize(_ size: CGFloat)
-    
+    func setBrickType(_ type: BrickType)
 }
