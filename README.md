@@ -45,9 +45,9 @@ Or 'generateBrickTileImages' to generate brick tiles and positions (columns/rows
 legofyService?.generateBrickTileImages() 
 ```
 
-Check out the demo project in 'Demo' folder. <br/>
+Check out the project in 'Demo' folder. <br/>
 ![alt text](https://github.com/oleh-zayats/Legofy/blob/master/Examples/Legofy.gif)
-<br/>
+<br/><br/>
 
 :construction: Work in progress...
 
@@ -55,6 +55,6 @@ Check out the demo project in 'Demo' folder. <br/>
 1. Make a nice project structure. :heavy_check_mark: <br/>
 2. Add Example Folder with CocoaPod usage. :heavy_check_mark: <br/>
 3. Write some simple Unit Tests. <br/>
-4. Describe component in Readme. <br/>
+4. Describe component in Readme. :heavy_check_mark: <br/>
 5. Add more brick assets to choose from, or maybe pdf/svg for scalability. :heavy_check_mark: <br/>
 6. Add output image adjustment possibilities (enchance image, change blend mode?). <br/>
