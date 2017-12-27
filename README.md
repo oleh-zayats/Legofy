@@ -26,8 +26,8 @@ legofyService?.generateBrickTileImages()
 ![alt text](https://github.com/oleh-zayats/Legofy/blob/master/Examples/Legofy.gif)
 
 # TODO: 
-1. Make a nice project structure. <br/>
-2. Add Example Folder with CocoaPod usage. <br/>
+1. Make a nice project structure. :heavy_check_mark: <br/>
+2. Add Example Folder with CocoaPod usage. :heavy_check_mark: <br/>
 3. Write some simple Unit Tests. <br/>
 4. Describe component in Readme. <br/>
 5. Add more brick assets to choose from, or maybe pdf/svg for scalability. :heavy_check_mark: <br/>
