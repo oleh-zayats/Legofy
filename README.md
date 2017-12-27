@@ -2,7 +2,7 @@
 Process any image to look like it's made out of LEGO blocks.
 Choose block size, look and adjust the result.
 
-:construction: Work In Progress (WIP)...
+:construction: Work In Progress...
 
 ![alt text](https://github.com/oleh-zayats/Legofy/blob/master/Resources/00-original.jpg)
 ![alt text](https://github.com/oleh-zayats/Legofy/blob/master/Resources/01-render.png)
@@ -25,8 +25,7 @@ legofyService?.generateImage()
 legofyService?.generateBrickTileImages() 
 ```
 
-
-:wrench: # TODO: 
+# TODO: 
 1. Make a nice project structure.
 2. Add Example Folder with CocoaPod usage.
 3. Write some simple Unit Tests.
