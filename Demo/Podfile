@@ -1,0 +1,8 @@
+
+target 'SwiftyLegofy' do
+
+  use_frameworks!
+
+	pod 'Legofy'
+
+end

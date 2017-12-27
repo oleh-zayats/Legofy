@@ -1,0 +1,623 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		04F5F0D2D0C2B58EF0EE39720C584A26 /* Legofy-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 571B964E2379CAA4D0EB078742992BA9 /* Legofy-dummy.m */; };
+		07B6DB13298DFF3FBA47D3A1AABDC85E /* CGImage+Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9B0EDB84FC79A3A2AD41CF3CA60E942 /* CGImage+Color.swift */; };
+		0C7ECF3D8D95B121A10407E223F28920 /* Float+Rounding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CA900D8E0BB3210D428443112493650 /* Float+Rounding.swift */; };
+		1919EF5364E0C3695B25EE18ACAF8318 /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9198AA083A877821A821967CE4D1A305 /* Utility.swift */; };
+		1D0E1D5A5CAC860C44A97A1B387D41C5 /* CGPoint+Hashable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27882322CD96AF131BB08F5C1753C7DE /* CGPoint+Hashable.swift */; };
+		24B022B622297D13CB7B05097647B9C3 /* brick-lego-clean.png in Resources */ = {isa = PBXBuildFile; fileRef = 305E08A5CEF3C9FE1E373AAFA349F1FF /* brick-lego-clean.png */; };
+		2B9AD4191EAE24DCB1DB08A66C4434CB /* LegofyService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379D7F47CD812D24C9CF49CA1C1232CF /* LegofyService.swift */; };
+		532ACEC51E707FFEC7F00D5ADBE0599D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B63C6A64CF66340668996F78DA6BB482 /* UIKit.framework */; };
+		666EE7DFAFF9A4490658744C72672B2B /* brick-lego-v1.png in Resources */ = {isa = PBXBuildFile; fileRef = 63FD233A069BD70D280DE67165D8B070 /* brick-lego-v1.png */; };
+		735D9D60BD3FAE0F1EE2D84AA41AE227 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D88AAE1F92055A60CC2FC970D7D34634 /* Foundation.framework */; };
+		7FA0EA20D61C20699C17A3EEF06F47DC /* LegofyServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7BBE901084E4330CD798EEA5412AE38 /* LegofyServiceProtocol.swift */; };
+		81FFF0622E0F1AAA30A1C99435AA358E /* brick-lego-v2.png in Resources */ = {isa = PBXBuildFile; fileRef = 212437C46482C28771F3A6A99E5A4608 /* brick-lego-v2.png */; };
+		82C22FD9C41F4E3AD5F6EEE9414EE86E /* Legofy-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 90630448BB8D24880CF00B4CF0AAB947 /* Legofy-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		87DDFC820F34473EFC8F6190C339321B /* Pods-SwiftyLegofy-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = C49D5BBAF3332C1CA94B42847108ED0A /* Pods-SwiftyLegofy-dummy.m */; };
+		B1547757FF7EFD46BA815DD45F07AB43 /* UIImage+Resizing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77322A1E37710B2CC02FDEE520E42860 /* UIImage+Resizing.swift */; };
+		B379B0F3A73AF22FC835F1451071DA18 /* Pods-SwiftyLegofy-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 03FC213480454D80239233693B14F3A8 /* Pods-SwiftyLegofy-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E87AF0485F046D4E24750EBAB70E5E1B /* brick-lego-v3.png in Resources */ = {isa = PBXBuildFile; fileRef = 9F020C1803AA7F2C3E37F38A3A23A1B1 /* brick-lego-v3.png */; };
+		E9F6BD86925110E36D87C6C5675A05B0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D88AAE1F92055A60CC2FC970D7D34634 /* Foundation.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F4CE640E85DB94CDD2B9E94A6406E2FF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D04FC500EC50047BDC2FA5956A0B0E0A;
+			remoteInfo = Legofy;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		03FC213480454D80239233693B14F3A8 /* Pods-SwiftyLegofy-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-SwiftyLegofy-umbrella.h"; sourceTree = "<group>"; };
+		16490888BCE06ECC5FF44A0502316AF7 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		212437C46482C28771F3A6A99E5A4608 /* brick-lego-v2.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "brick-lego-v2.png"; path = "Resources/brick-lego-v2.png"; sourceTree = "<group>"; };
+		27882322CD96AF131BB08F5C1753C7DE /* CGPoint+Hashable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "CGPoint+Hashable.swift"; path = "Classes/CGPoint+Hashable.swift"; sourceTree = "<group>"; };
+		2B59BD124B325888D5E23DD2490F88AA /* Pods-SwiftyLegofy-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SwiftyLegofy-acknowledgements.plist"; sourceTree = "<group>"; };
+		305E08A5CEF3C9FE1E373AAFA349F1FF /* brick-lego-clean.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "brick-lego-clean.png"; path = "Resources/brick-lego-clean.png"; sourceTree = "<group>"; };
+		379D7F47CD812D24C9CF49CA1C1232CF /* LegofyService.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LegofyService.swift; path = Classes/LegofyService.swift; sourceTree = "<group>"; };
+		3A159115A05A8BCD4120709908296098 /* Pods-SwiftyLegofy-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-SwiftyLegofy-frameworks.sh"; sourceTree = "<group>"; };
+		3F91C32B9C38C462DF8BD1F524AAE65C /* Legofy.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = Legofy.modulemap; sourceTree = "<group>"; };
+		40BA941ACA60234879490DD591DC8BC1 /* Legofy-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Legofy-prefix.pch"; sourceTree = "<group>"; };
+		47C8BDB7B06A4831E2088DDC1BE07BA6 /* Legofy.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Legofy.xcconfig; sourceTree = "<group>"; };
+		4E55F811A6891D97A14E6BE2B2865507 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		525B32A42F55F224CD2C83EB7BAE4329 /* Pods-SwiftyLegofy-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-SwiftyLegofy-acknowledgements.markdown"; sourceTree = "<group>"; };
+		571B964E2379CAA4D0EB078742992BA9 /* Legofy-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Legofy-dummy.m"; sourceTree = "<group>"; };
+		5CA900D8E0BB3210D428443112493650 /* Float+Rounding.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Float+Rounding.swift"; path = "Classes/Float+Rounding.swift"; sourceTree = "<group>"; };
+		63FD233A069BD70D280DE67165D8B070 /* brick-lego-v1.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "brick-lego-v1.png"; path = "Resources/brick-lego-v1.png"; sourceTree = "<group>"; };
+		6E1DF19C081F5C88240782CF1DB6DF8F /* Legofy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Legofy.framework; path = Legofy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		77322A1E37710B2CC02FDEE520E42860 /* UIImage+Resizing.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIImage+Resizing.swift"; path = "Classes/UIImage+Resizing.swift"; sourceTree = "<group>"; };
+		8481366251858A7CC6815B6A4FB089DE /* Pods-SwiftyLegofy.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-SwiftyLegofy.modulemap"; sourceTree = "<group>"; };
+		90630448BB8D24880CF00B4CF0AAB947 /* Legofy-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Legofy-umbrella.h"; sourceTree = "<group>"; };
+		9198AA083A877821A821967CE4D1A305 /* Utility.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Utility.swift; path = Classes/Utility.swift; sourceTree = "<group>"; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9CC921087B083762F39D5F82430B88F9 /* Pods-SwiftyLegofy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SwiftyLegofy.debug.xcconfig"; sourceTree = "<group>"; };
+		9F020C1803AA7F2C3E37F38A3A23A1B1 /* brick-lego-v3.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "brick-lego-v3.png"; path = "Resources/brick-lego-v3.png"; sourceTree = "<group>"; };
+		A364093B22142F59E18C2A23A6726FA5 /* Pods-SwiftyLegofy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SwiftyLegofy.release.xcconfig"; sourceTree = "<group>"; };
+		B25E8D63036EAC99577FE2C7AECFF53E /* Pods_SwiftyLegofy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_SwiftyLegofy.framework; path = "Pods-SwiftyLegofy.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B63C6A64CF66340668996F78DA6BB482 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		B9B0EDB84FC79A3A2AD41CF3CA60E942 /* CGImage+Color.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "CGImage+Color.swift"; path = "Classes/CGImage+Color.swift"; sourceTree = "<group>"; };
+		C49D5BBAF3332C1CA94B42847108ED0A /* Pods-SwiftyLegofy-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-SwiftyLegofy-dummy.m"; sourceTree = "<group>"; };
+		CFD12A89A38E2FB187A193D126FD6FBF /* Pods-SwiftyLegofy-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-SwiftyLegofy-resources.sh"; sourceTree = "<group>"; };
+		D88AAE1F92055A60CC2FC970D7D34634 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		F7BBE901084E4330CD798EEA5412AE38 /* LegofyServiceProtocol.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LegofyServiceProtocol.swift; path = Classes/LegofyServiceProtocol.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		76B6637465858F562C4746FE72CE8288 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				735D9D60BD3FAE0F1EE2D84AA41AE227 /* Foundation.framework in Frameworks */,
+				532ACEC51E707FFEC7F00D5ADBE0599D /* UIKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F9D27874FECCD2741267EFDB3BCAADDC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E9F6BD86925110E36D87C6C5675A05B0 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		02DA688A36DEC1030EE5CB0AF1F2955D /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				4E55F811A6891D97A14E6BE2B2865507 /* Info.plist */,
+				3F91C32B9C38C462DF8BD1F524AAE65C /* Legofy.modulemap */,
+				47C8BDB7B06A4831E2088DDC1BE07BA6 /* Legofy.xcconfig */,
+				571B964E2379CAA4D0EB078742992BA9 /* Legofy-dummy.m */,
+				40BA941ACA60234879490DD591DC8BC1 /* Legofy-prefix.pch */,
+				90630448BB8D24880CF00B4CF0AAB947 /* Legofy-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/Legofy";
+			sourceTree = "<group>";
+		};
+		1FF99EA724F010709FC733D8A17E31DD /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				DE4B092246CFB68025BCF40EA5291DC3 /* Legofy */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		433CD3331B6C3787F473C941B61FC68F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				438B396F6B4147076630CAEFE34282C1 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		438B396F6B4147076630CAEFE34282C1 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				D88AAE1F92055A60CC2FC970D7D34634 /* Foundation.framework */,
+				B63C6A64CF66340668996F78DA6BB482 /* UIKit.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		71B322A2EC96490F27FF676950EF5959 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				305E08A5CEF3C9FE1E373AAFA349F1FF /* brick-lego-clean.png */,
+				63FD233A069BD70D280DE67165D8B070 /* brick-lego-v1.png */,
+				212437C46482C28771F3A6A99E5A4608 /* brick-lego-v2.png */,
+				9F020C1803AA7F2C3E37F38A3A23A1B1 /* brick-lego-v3.png */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		7DB346D0F39D3F0E887471402A8071AB = {
+			isa = PBXGroup;
+			children = (
+				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
+				433CD3331B6C3787F473C941B61FC68F /* Frameworks */,
+				1FF99EA724F010709FC733D8A17E31DD /* Pods */,
+				90F46FE651EBADBDE5C14F9C6AD2AF56 /* Products */,
+				EB51F79B34EF6272EB1F3C50E961E49E /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		90F46FE651EBADBDE5C14F9C6AD2AF56 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6E1DF19C081F5C88240782CF1DB6DF8F /* Legofy.framework */,
+				B25E8D63036EAC99577FE2C7AECFF53E /* Pods_SwiftyLegofy.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		BA420E742DFB26598FB7A35F0913799E /* Pods-SwiftyLegofy */ = {
+			isa = PBXGroup;
+			children = (
+				16490888BCE06ECC5FF44A0502316AF7 /* Info.plist */,
+				8481366251858A7CC6815B6A4FB089DE /* Pods-SwiftyLegofy.modulemap */,
+				525B32A42F55F224CD2C83EB7BAE4329 /* Pods-SwiftyLegofy-acknowledgements.markdown */,
+				2B59BD124B325888D5E23DD2490F88AA /* Pods-SwiftyLegofy-acknowledgements.plist */,
+				C49D5BBAF3332C1CA94B42847108ED0A /* Pods-SwiftyLegofy-dummy.m */,
+				3A159115A05A8BCD4120709908296098 /* Pods-SwiftyLegofy-frameworks.sh */,
+				CFD12A89A38E2FB187A193D126FD6FBF /* Pods-SwiftyLegofy-resources.sh */,
+				03FC213480454D80239233693B14F3A8 /* Pods-SwiftyLegofy-umbrella.h */,
+				9CC921087B083762F39D5F82430B88F9 /* Pods-SwiftyLegofy.debug.xcconfig */,
+				A364093B22142F59E18C2A23A6726FA5 /* Pods-SwiftyLegofy.release.xcconfig */,
+			);
+			name = "Pods-SwiftyLegofy";
+			path = "Target Support Files/Pods-SwiftyLegofy";
+			sourceTree = "<group>";
+		};
+		DE4B092246CFB68025BCF40EA5291DC3 /* Legofy */ = {
+			isa = PBXGroup;
+			children = (
+				B9B0EDB84FC79A3A2AD41CF3CA60E942 /* CGImage+Color.swift */,
+				27882322CD96AF131BB08F5C1753C7DE /* CGPoint+Hashable.swift */,
+				5CA900D8E0BB3210D428443112493650 /* Float+Rounding.swift */,
+				379D7F47CD812D24C9CF49CA1C1232CF /* LegofyService.swift */,
+				F7BBE901084E4330CD798EEA5412AE38 /* LegofyServiceProtocol.swift */,
+				77322A1E37710B2CC02FDEE520E42860 /* UIImage+Resizing.swift */,
+				9198AA083A877821A821967CE4D1A305 /* Utility.swift */,
+				71B322A2EC96490F27FF676950EF5959 /* Resources */,
+				02DA688A36DEC1030EE5CB0AF1F2955D /* Support Files */,
+			);
+			name = Legofy;
+			path = Legofy;
+			sourceTree = "<group>";
+		};
+		EB51F79B34EF6272EB1F3C50E961E49E /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				BA420E742DFB26598FB7A35F0913799E /* Pods-SwiftyLegofy */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		24A72B504492C6083840DD2C0F961282 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B379B0F3A73AF22FC835F1451071DA18 /* Pods-SwiftyLegofy-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		307460180ADF0D34E15A3C5130F74438 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				82C22FD9C41F4E3AD5F6EEE9414EE86E /* Legofy-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		60233C07889827E42EA5004F7FAB8883 /* Pods-SwiftyLegofy */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 70B6F8E19062AF34DE754C46A9AB362F /* Build configuration list for PBXNativeTarget "Pods-SwiftyLegofy" */;
+			buildPhases = (
+				CF471FCC02C4AC45798BC99AF660D049 /* Sources */,
+				F9D27874FECCD2741267EFDB3BCAADDC /* Frameworks */,
+				24A72B504492C6083840DD2C0F961282 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6C6CE439FC49CA9936E6D165EDB8A087 /* PBXTargetDependency */,
+			);
+			name = "Pods-SwiftyLegofy";
+			productName = "Pods-SwiftyLegofy";
+			productReference = B25E8D63036EAC99577FE2C7AECFF53E /* Pods_SwiftyLegofy.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		D04FC500EC50047BDC2FA5956A0B0E0A /* Legofy */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 66845630606CE08BB9F2855AAA851211 /* Build configuration list for PBXNativeTarget "Legofy" */;
+			buildPhases = (
+				8EA988670F2B4C201A559F9D57D8E9B4 /* Sources */,
+				76B6637465858F562C4746FE72CE8288 /* Frameworks */,
+				63F1A8B316FF2F67D31641E5C9050CC3 /* Resources */,
+				307460180ADF0D34E15A3C5130F74438 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Legofy;
+			productName = Legofy;
+			productReference = 6E1DF19C081F5C88240782CF1DB6DF8F /* Legofy.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0830;
+				LastUpgradeCheck = 0700;
+			};
+			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
+			productRefGroup = 90F46FE651EBADBDE5C14F9C6AD2AF56 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D04FC500EC50047BDC2FA5956A0B0E0A /* Legofy */,
+				60233C07889827E42EA5004F7FAB8883 /* Pods-SwiftyLegofy */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		63F1A8B316FF2F67D31641E5C9050CC3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				24B022B622297D13CB7B05097647B9C3 /* brick-lego-clean.png in Resources */,
+				666EE7DFAFF9A4490658744C72672B2B /* brick-lego-v1.png in Resources */,
+				81FFF0622E0F1AAA30A1C99435AA358E /* brick-lego-v2.png in Resources */,
+				E87AF0485F046D4E24750EBAB70E5E1B /* brick-lego-v3.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8EA988670F2B4C201A559F9D57D8E9B4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				07B6DB13298DFF3FBA47D3A1AABDC85E /* CGImage+Color.swift in Sources */,
+				1D0E1D5A5CAC860C44A97A1B387D41C5 /* CGPoint+Hashable.swift in Sources */,
+				0C7ECF3D8D95B121A10407E223F28920 /* Float+Rounding.swift in Sources */,
+				04F5F0D2D0C2B58EF0EE39720C584A26 /* Legofy-dummy.m in Sources */,
+				2B9AD4191EAE24DCB1DB08A66C4434CB /* LegofyService.swift in Sources */,
+				7FA0EA20D61C20699C17A3EEF06F47DC /* LegofyServiceProtocol.swift in Sources */,
+				B1547757FF7EFD46BA815DD45F07AB43 /* UIImage+Resizing.swift in Sources */,
+				1919EF5364E0C3695B25EE18ACAF8318 /* Utility.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CF471FCC02C4AC45798BC99AF660D049 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				87DDFC820F34473EFC8F6190C339321B /* Pods-SwiftyLegofy-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		6C6CE439FC49CA9936E6D165EDB8A087 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Legofy;
+			target = D04FC500EC50047BDC2FA5956A0B0E0A /* Legofy */;
+			targetProxy = F4CE640E85DB94CDD2B9E94A6406E2FF /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		2F0F735662F2DD2067C4DBB58D63574F /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 47C8BDB7B06A4831E2088DDC1BE07BA6 /* Legofy.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/Legofy/Legofy-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Legofy/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Legofy/Legofy.modulemap";
+				PRODUCT_NAME = Legofy;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		39C5BC78A31CDE101068C530CAC7FA0F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		89C8BB24E37B25BAEEB8FBA01EE05DAF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+		ADB5E416C023C17B0971FDE067209972 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 47C8BDB7B06A4831E2088DDC1BE07BA6 /* Legofy.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/Legofy/Legofy-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Legofy/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Legofy/Legofy.modulemap";
+				PRODUCT_NAME = Legofy;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		F02B39807A3DE5F6DABD0A0D4CED1630 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A364093B22142F59E18C2A23A6726FA5 /* Pods-SwiftyLegofy.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-SwiftyLegofy/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-SwiftyLegofy/Pods-SwiftyLegofy.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_SwiftyLegofy;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		F5AAE6E6E3F2902DDBF1B1138FFFF1DB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9CC921087B083762F39D5F82430B88F9 /* Pods-SwiftyLegofy.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-SwiftyLegofy/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-SwiftyLegofy/Pods-SwiftyLegofy.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_SwiftyLegofy;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				39C5BC78A31CDE101068C530CAC7FA0F /* Debug */,
+				89C8BB24E37B25BAEEB8FBA01EE05DAF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		66845630606CE08BB9F2855AAA851211 /* Build configuration list for PBXNativeTarget "Legofy" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ADB5E416C023C17B0971FDE067209972 /* Debug */,
+				2F0F735662F2DD2067C4DBB58D63574F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		70B6F8E19062AF34DE754C46A9AB362F /* Build configuration list for PBXNativeTarget "Pods-SwiftyLegofy" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F5AAE6E6E3F2902DDBF1B1138FFFF1DB /* Debug */,
+				F02B39807A3DE5F6DABD0A0D4CED1630 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+}
