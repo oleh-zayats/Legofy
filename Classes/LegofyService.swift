@@ -66,7 +66,7 @@ public final class LegofyService: LegofyServiceProtocol {
         }
     }
     
-    init(sourceImage: UIImage, outputSize: CGSize? = nil, brickSize: CGFloat = 20.0, brickType: BrickType = .clean) {
+    public init(sourceImage: UIImage, outputSize: CGSize? = nil, brickSize: CGFloat = 20.0, brickType: BrickType = .clean) {
         self._sourceImage = sourceImage
         self._outputSize = outputSize ?? sourceImage.size
         self._brickSize = brickSize
