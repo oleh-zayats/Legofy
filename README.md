@@ -1,7 +1,7 @@
 # Legofy
 Turn any image into lego block grid.
 
-Work In Progress...
+:construction: Work In Progress...
 
 ![alt text](https://github.com/oleh-zayats/Legofy/blob/master/Resources/00-original.jpg)
 ![alt text](https://github.com/oleh-zayats/Legofy/blob/master/Resources/01-render.png)
@@ -24,8 +24,10 @@ legofyService?.generateImage()
 legofyService?.generateBrickTileImages() 
 ```
 
+:wrench:
 # TODO:
 1. Make a nice project structure.
 2. Add Example Folder with CocoaPod usage.
 3. Write some simple Unit Tests.
 4. Describe component in Readme.
+5. Add more brick assets to choose from, or maybe pdf/svg for scalability.
