@@ -13,7 +13,7 @@ Work In Progress...
 ![alt text](https://github.com/oleh-zayats/Legofy/blob/master/Resources/02-render.png)
 
 # Usage:
-```
+```swift
 // Initialize service
 legofyService = LegofyService(sourceImage: image, outputSize: outputSize, brickSize: 15.0)
 legofyService?.delegate = self
