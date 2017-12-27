@@ -36,13 +36,13 @@ public final class LegofyService: LegofyServiceProtocol {
     private var _sourceBrickImage: UIImage {
         switch _brickType {
         case .clean:
-            return #imageLiteral(resourceName: "lego-brick-tile-bw")
+            return #imageLiteral(resourceName: "brick-clean")
         case .legoV1:
-            return #imageLiteral(resourceName: "lego-brick-tile-bw-2")
+            return #imageLiteral(resourceName: "brick-lego-v1")
         case .legoV2:
-            return #imageLiteral(resourceName: "lego-brick-tile-bw-4")
+            return #imageLiteral(resourceName: "brick-lego-v2")
         case .legoV3:
-            return #imageLiteral(resourceName: "lego-brick-tile-bw-3")
+            return #imageLiteral(resourceName: "brick-lego-v3")
         case .custom(let image):
             return image
         }

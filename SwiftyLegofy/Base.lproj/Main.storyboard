@@ -54,7 +54,7 @@
                                     <action selector="sliderDidChangeValue:" destination="BYZ-38-t0r" eventType="valueChanged" id="ot0-mw-20D"/>
                                 </connections>
                             </slider>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="source5" translatesAutoresizingMaskIntoConstraints="NO" id="NP6-qO-cws">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="source-image" translatesAutoresizingMaskIntoConstraints="NO" id="NP6-qO-cws">
                                 <rect key="frame" x="10" y="86" width="1004" height="612"/>
                                 <color key="backgroundColor" red="0.18094911399282942" green="0.18094911399282942" blue="0.18094911399282942" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </imageView>
@@ -116,6 +116,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="source5" width="1940" height="1091"/>
+        <image name="source-image" width="1940" height="1091"/>
     </resources>
 </document>

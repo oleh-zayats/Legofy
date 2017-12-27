@@ -10,7 +10,7 @@ import UIKit
 
 private enum Default {
     static let brickSize: CGFloat = 50.0
-    static let sourceImg: UIImage = #imageLiteral(resourceName: "source5")
+    static let sourceImg: UIImage = #imageLiteral(resourceName: "source-image")
     static let brickType: BrickType = .clean
 }
 
