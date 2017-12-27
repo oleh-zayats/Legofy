@@ -1,9 +1,6 @@
 # Legofy
-Process any image to look like it's made out of LEGO blocks.
 
-:construction: Work In Progress...
-
-![alt text](https://github.com/oleh-zayats/Legofy/blob/master/Resources/Legofy.png)
+![alt text](https://github.com/oleh-zayats/Legofy/blob/master/Examples/Legofy.png)
 
 # How To Use:
 ```swift
@@ -26,12 +23,12 @@ legofyService?.generateBrickTileImages()
 
 ```
 
-![alt text](https://github.com/oleh-zayats/Legofy/blob/master/Resources/Legofy.gif)
+![alt text](https://github.com/oleh-zayats/Legofy/blob/master/Examples/Legofy.gif)
 
 # TODO: 
-1. Make a nice project structure.
-2. Add Example Folder with CocoaPod usage.
-3. Write some simple Unit Tests.
-4. Describe component in Readme.
-~~5. Add more brick assets to choose from, or maybe pdf/svg for scalability.~~
-6. Add output image adjustment possibilities (enchance image, change blend mode?).
+1. Make a nice project structure. <br/>
+2. Add Example Folder with CocoaPod usage. <br/>
+3. Write some simple Unit Tests. <br/>
+4. Describe component in Readme. <br/>
+5. Add more brick assets to choose from, or maybe pdf/svg for scalability. :heavy_check_mark: <br/>
+6. Add output image adjustment possibilities (enchance image, change blend mode?). <br/>
