@@ -64,4 +64,4 @@ Check out the project in 'Demo' folder. <br/>
 3. Write some simple Unit Tests. <br/>
 4. Describe component in Readme. :heavy_check_mark: <br/>
 5. Add more brick assets to choose from, or maybe pdf/svg for scalability. :heavy_check_mark: <br/>
-6. Add output image adjustment possibilities (enchance image, change blend mode?). <br/>
+6. Add output image adjustment possibilities (enchance image, change blend mode?). :heavy_check_mark: <br/>
