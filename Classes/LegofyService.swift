@@ -8,6 +8,10 @@
 
 import UIKit
 
+public enum BlendMode {
+    case multiply, hardLight, colorBurn, difference
+}
+
 public enum BrickType {
     case clean, legoV1, legoV2, legoV3, custom(UIImage)
 }
@@ -32,6 +36,7 @@ public final class LegofyService: LegofyServiceProtocol {
     private var _outputSize: CGSize
     private var _brickSize: CGFloat
     private var _brickType: BrickType
+    private var _blendMode: CGBlendMode = .multiply
     
     private var _sourceBrickImage: UIImage {
         switch _brickType {
@@ -66,11 +71,12 @@ public final class LegofyService: LegofyServiceProtocol {
         }
     }
     
-    public init(sourceImage: UIImage, outputSize: CGSize? = nil, brickSize: CGFloat = 20.0, brickType: BrickType = .clean) {
+    public init(sourceImage: UIImage, outputSize: CGSize? = nil, brickSize: CGFloat = 20.0, brickType: BrickType = .clean, blendMode: BlendMode = .multiply) {
         self._sourceImage = sourceImage
         self._outputSize = outputSize ?? sourceImage.size
         self._brickSize = brickSize
         self._brickType = brickType
+        self.setBlendMode(blendMode)
     }
     
     /*
@@ -87,10 +93,11 @@ public final class LegofyService: LegofyServiceProtocol {
             
             let resizedBrickImage = _fitBrickImage
             var positionsAndTileImagess: [CGPoint: UIImage] = [:]
-            calculateTilePositionsAndColors(image: _fitSourceImage, tileSize: resizedBrickImage.size).forEach { (position, color) in
-                positionsAndTileImagess[position] = resizedBrickImage.cgImage?.filled(with: color)
+            calculateTilePositionsAndColors(image: _fitSourceImage, tileSize: resizedBrickImage.size).forEach { (arguments) in
+                
+                let (position, color) = arguments
+                positionsAndTileImagess[position] = resizedBrickImage.cgImage?.filled(with: color, blendMode: _blendMode)
             }
-            
             delegate?.legofyServiceDidFinishGeneratingTileImages(positionsAndTileImagess)
         }
     }
@@ -126,6 +133,19 @@ public final class LegofyService: LegofyServiceProtocol {
     public func setBrickType(_ type: BrickType) {
         _brickType = type
     }
+        
+    public func setBlendMode(_ mode: BlendMode) {
+        switch mode {
+        case .multiply:
+            _blendMode = .multiply
+        case .difference:
+            _blendMode = .difference
+        case .hardLight:
+            _blendMode = .hardLight
+        case .colorBurn:
+            _blendMode = .colorBurn
+        }
+    }
 }
 
 private extension LegofyService {
@@ -140,7 +160,7 @@ private extension LegofyService {
             let resizedBrickImage = _fitBrickImage.cgImage
             
             positionsAndColors.forEach { (position, color) in
-                resizedBrickImage?.filled(with: color)?.draw(at: position)
+                resizedBrickImage?.filled(with: color, blendMode: _blendMode)?.draw(at: position)
                 
                 /* Progress tracking (tile component colored) */
                 if _progress < 1.0 {

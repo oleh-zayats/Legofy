@@ -55,7 +55,7 @@ extension CGImage {
      - parameter color: image color
      - returns: colored UIImage
      */
-    func filled(with color: UIColor) -> UIImage? {
+    func filled(with color: UIColor, blendMode: CGBlendMode) -> UIImage? {
         defer {
             UIGraphicsEndImageContext()
         }
@@ -67,7 +67,7 @@ extension CGImage {
             return nil
         }
         
-        context.setBlendMode(.multiply)
+        context.setBlendMode(blendMode)
         context.translateBy(x: 0, y: CGFloat(height))
         context.scaleBy(x: 1.0, y: -1.0)
         

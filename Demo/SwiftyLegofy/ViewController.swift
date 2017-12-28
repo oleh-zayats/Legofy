@@ -12,7 +12,7 @@ import Legofy
 private enum Default {
     static let brickSize: CGFloat = 50.0
     static let sourceImg: UIImage = #imageLiteral(resourceName: "source-image")
-    static let brickType: BrickType = .clean
+    static let brickType: BrickType = .legoV2
 }
 
 class ViewController: UIViewController {
@@ -62,7 +62,20 @@ private extension ViewController {
         legofyService?.setBrickSize(brickSize)
     }
     
-    @IBAction func segmentedControlDidChangeValue(_ sender: UISegmentedControl) {
+    @IBAction func blendModeSegmentDidChangeValue(_ sender: UISegmentedControl) {
+        let index = sender.selectedSegmentIndex
+        if index == 0 {
+            legofyService?.setBlendMode(.multiply)
+        } else if index == 1 {
+            legofyService?.setBlendMode(.hardLight)
+        } else if index == 2 {
+            legofyService?.setBlendMode(.colorBurn)
+        } else if index == 3 {
+            legofyService?.setBlendMode(.difference)
+        }
+    }
+    
+    @IBAction func brickTypeSegmentDidChangeValue(_ sender: UISegmentedControl) {
         let index = sender.selectedSegmentIndex
         if index == 0 {
             legofyService?.setBrickType(.clean)
@@ -88,6 +101,7 @@ private extension ViewController {
 
 private extension ViewController {
     func initialSetup() {
+        outputImageView.image = Default.sourceImg
         outputImageView.layer.borderWidth = 3.0
         outputImageView.layer.borderColor = UIColor.darkGray.cgColor
         brickSizeLabel.text = "Brick Size: \(Default.brickSize)"

@@ -45,7 +45,7 @@
                                 </connections>
                             </button>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="30" minValue="20" maxValue="120" translatesAutoresizingMaskIntoConstraints="NO" id="fk9-DP-Nxn">
-                                <rect key="frame" x="301" y="36" width="543" height="31"/>
+                                <rect key="frame" x="367" y="36" width="477" height="31"/>
                                 <color key="tintColor" red="1" green="0.51003136849999997" blue="0.1039909592" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="N3e-HW-7NP"/>
@@ -67,9 +67,10 @@
                                 <color key="textColor" red="1" green="0.51003136849999997" blue="0.1039909592" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="MN9-bU-iwD">
-                                <rect key="frame" x="20" y="36" width="263" height="31"/>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="2" translatesAutoresizingMaskIntoConstraints="NO" id="MN9-bU-iwD">
+                                <rect key="frame" x="20" y="36" width="329" height="31"/>
                                 <constraints>
+                                    <constraint firstAttribute="width" constant="329" id="CXP-pS-db8"/>
                                     <constraint firstAttribute="height" constant="30" id="g45-g1-pQb"/>
                                 </constraints>
                                 <segments>
@@ -80,13 +81,31 @@
                                 </segments>
                                 <color key="tintColor" red="1" green="0.51003136849999997" blue="0.1039909592" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
-                                    <action selector="segmentedControlDidChangeValue:" destination="BYZ-38-t0r" eventType="valueChanged" id="Gvy-Y6-cxb"/>
+                                    <action selector="brickTypeSegmentDidChangeValue:" destination="BYZ-38-t0r" eventType="valueChanged" id="2gs-vz-ase"/>
+                                </connections>
+                            </segmentedControl>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Jsf-Lg-5f3">
+                                <rect key="frame" x="20" y="718" width="329" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="GTJ-y6-MEk"/>
+                                    <constraint firstAttribute="width" constant="329" id="HLZ-V3-uXn"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="Multiply"/>
+                                    <segment title="HardLight"/>
+                                    <segment title="ColorBurn"/>
+                                    <segment title="Difference"/>
+                                </segments>
+                                <color key="tintColor" red="1" green="0.51003136849999997" blue="0.1039909592" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <action selector="blendModeSegmentDidChangeValue:" destination="BYZ-38-t0r" eventType="valueChanged" id="uXz-pm-GWE"/>
                                 </connections>
                             </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" red="0.16512782197081968" green="0.15978574170842466" blue="0.17379776552590676" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="hhL-Qq-nsI" secondAttribute="bottom" constant="20" id="7wj-EO-wAo"/>
+                            <constraint firstItem="Jsf-Lg-5f3" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="8u8-j8-nss"/>
                             <constraint firstItem="fk9-DP-Nxn" firstAttribute="leading" secondItem="MN9-bU-iwD" secondAttribute="trailing" constant="20" id="Em2-PE-Mlb"/>
                             <constraint firstItem="fk9-DP-Nxn" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="16" id="HTL-ML-dHS"/>
                             <constraint firstItem="eid-tT-44m" firstAttribute="centerY" secondItem="fk9-DP-Nxn" secondAttribute="centerY" id="Q3w-xh-QGi"/>
@@ -96,6 +115,7 @@
                             <constraint firstItem="eid-tT-44m" firstAttribute="leading" secondItem="fk9-DP-Nxn" secondAttribute="trailing" constant="20" id="cph-Al-sZe"/>
                             <constraint firstItem="fNo-1b-SvW" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="-50" id="eIM-hY-W9s"/>
                             <constraint firstItem="fNo-1b-SvW" firstAttribute="top" secondItem="NP6-qO-cws" secondAttribute="bottom" constant="20" id="jHd-m1-Cm9"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Jsf-Lg-5f3" secondAttribute="bottom" constant="20" id="jHr-mr-9FA"/>
                             <constraint firstItem="NP6-qO-cws" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" constant="-10" id="jsX-pM-3XI"/>
                             <constraint firstItem="MN9-bU-iwD" firstAttribute="centerY" secondItem="fk9-DP-Nxn" secondAttribute="centerY" id="kQ4-qu-15Z"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="fNo-1b-SvW" secondAttribute="bottom" constant="20" id="kXW-EX-kyw"/>

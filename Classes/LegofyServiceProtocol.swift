@@ -18,4 +18,6 @@ public protocol LegofyServiceProtocol {
     func setOutputSize(_ size: CGSize)
     func setBrickSize(_ size: CGFloat)
     func setBrickType(_ type: BrickType)
+    func setBlendMode(_ mode: BlendMode)
+
 }
