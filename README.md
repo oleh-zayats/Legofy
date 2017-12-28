@@ -14,7 +14,7 @@
 ```pod 'Legofy'```<br/>
 run ```pod install```<br/>
 
-2. Manually:<br/> Drag Classes to your project directory and add brick images from Resources into Assets folder of the project.
+2. Manually:<br/> Drag Classes folder to your project directory and add brick images from Resources into Assets folder of the project.
 
 # How To Use:
 Import module:
@@ -23,7 +23,7 @@ import Legofy
 ```
 Initialize service with:
 ```swift
-init(sourceImage: UIImage, outputSize: CGSize? = nil, brickSize: CGFloat = 20.0, brickType: BrickType = .clean)
+init(sourceImage: UIImage, outputSize: CGSize? = nil, brickSize: CGFloat = 20.0, brickType: BrickType = .clean, blendMode: BlendMode = .multiply)
 ```
 Setup delegate:
 ```swift
@@ -42,6 +42,13 @@ enum BrickType {
 }
 ```
 
+Blend modes available:
+```swift
+enum BlendMode {
+    case multiply, hardLight, colorBurn, difference
+}
+```
+
 Call 'generateImage' to generate image:
 ```swift
 legofyService?.generateImage()
@@ -53,6 +60,7 @@ legofyService?.generateBrickTileImages()
 ```
 
 Check out the project in 'Demo' folder. <br/>
+Don't forget to run ```pod install``` in Demo directory ^^ <br/>
 ![alt text](https://github.com/oleh-zayats/Legofy/blob/master/Examples/Legofy.gif)
 <br/><br/>
 
