@@ -60,7 +60,7 @@ public final class LegofyService: LegofyServiceProtocol {
     
     private var _progress: Float = 0.0 {
         didSet {
-            var progress = _progress
+            var progress = _progress.roundTo(3)
             if isPercentProgressEnabled { progress = _progress.roundTo(2) * 100 }
             delegate?.legofyServiceDidUpdateProgress(progress)
         }
