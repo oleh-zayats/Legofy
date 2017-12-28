@@ -1,5 +1,12 @@
 # Legofy
 
+![License](https://img.shields.io/badge/Licence-MIT-blue.svg)
+![Platform](https://img.shields.io/badge/Platform-iOS-green.svg)
+![Language](https://img.shields.io/badge/language-swift%204.0-orange.svg)
+![CocoaPod](https://img.shields.io/badge/pod-0.3.0-red.svg)
+![Dependencies](https://img.shields.io/badge/Dependencies-None-lightgray.svg)
+
+
 ![alt text](https://github.com/oleh-zayats/Legofy/blob/master/Examples/Legofy.png)
 
 # Installation:
