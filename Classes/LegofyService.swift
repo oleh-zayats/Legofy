@@ -8,12 +8,12 @@
 
 import UIKit
 
-public enum BlendMode {
-    case multiply, hardLight, colorBurn, difference
-}
-
 public enum BrickType {
     case clean, legoV1, legoV2, legoV3, custom(UIImage)
+}
+
+public enum BlendMode {
+    case multiply, hardLight, colorBurn, difference
 }
 
 public protocol LegofyServiceDelegate: class {
@@ -39,15 +39,16 @@ public final class LegofyService: LegofyServiceProtocol {
     private var _blendMode: CGBlendMode = .multiply
     
     private var _sourceBrickImage: UIImage {
+        let bundle = Bundle(for: type(of: self))
         switch _brickType {
         case .clean:
-            return UIImage(named: "brick-lego-clean")!
+            return UIImage(named: "brick-lego-clean", in: bundle, compatibleWith: nil)!
         case .legoV1:
-            return UIImage(named: "brick-lego-v1")!
+            return UIImage(named: "brick-lego-v1", in: bundle, compatibleWith: nil)!
         case .legoV2:
-            return UIImage(named: "brick-lego-v2")!
+            return UIImage(named: "brick-lego-v2", in: bundle, compatibleWith: nil)!
         case .legoV3:
-            return UIImage(named: "brick-lego-v3")!
+            return UIImage(named: "brick-lego-v3", in: bundle, compatibleWith: nil)!
         case .custom(let image):
             return image
         }
