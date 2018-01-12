@@ -20,9 +20,9 @@ Import module:
 ```swift
 import Legofy
 ```
-Initialize service with:
+Initialize service:
 ```swift
-init(sourceImage: UIImage, outputSize: CGSize? = nil, brickSize: CGFloat = 20.0, brickType: BrickType = .clean, blendMode: BlendMode = .multiply)
+let legofyService = LegofyService(sourceImage: srcImage, brickSize: 50.0, brickType: .legoV2)
 ```
 Setup delegate:
 ```swift
@@ -58,17 +58,8 @@ Or 'generateBrickTileImages' to generate brick tiles and positions (columns/rows
 legofyService?.generateBrickTileImages() 
 ```
 
-Check out the project in 'Demo' folder. <br/>
+## Check out the project in 'Demo' folder. <br/>
 Don't forget to run ```pod install``` in Demo directory ^^ <br/>
 ![alt text](https://github.com/oleh-zayats/Legofy/blob/master/Examples/Legofy.gif)
 <br/><br/>
 
-:construction: Work in progress...
-
-# TODO: 
-1. Make a nice project structure. :heavy_check_mark: <br/>
-2. Add Example Folder with CocoaPod usage. :heavy_check_mark: <br/>
-3. Write some simple Unit Tests. <br/>
-4. Describe component in Readme. :heavy_check_mark: <br/>
-5. Add more brick assets to choose from, or maybe pdf/svg for scalability. :heavy_check_mark: <br/>
-6. Add output image adjustment possibilities (enchance image, change blend mode?). :heavy_check_mark: <br/>
